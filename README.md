@@ -1,4 +1,4 @@
-Fork from [RocketMQ](https://github.com/NDPMediaCorp/RocketMQ-Client4CPP) C++ Client
+rocketMQ-client4cpp
 ===================
 
 ### 主要工作
@@ -20,3 +20,5 @@ Fork from [RocketMQ](https://github.com/NDPMediaCorp/RocketMQ-Client4CPP) C++ Cl
   cmake .  
   make && make install
 ```
+
+Fork from [RocketMQ](https://github.com/NDPMediaCorp/RocketMQ-Client4CPP) C++ Client
