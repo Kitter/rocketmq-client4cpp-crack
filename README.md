@@ -16,6 +16,6 @@ Fork from [RocketMQ](https://github.com/NDPMediaCorp/RocketMQ-Client4CPP) C++ Cl
 
 ### 安装方法
 <code>
-  cmake .
+  cmake .  
   make && make install
 </code>
