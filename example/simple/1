@@ -1,0 +1,37 @@
+==10765== Memcheck, a memory error detector
+==10765== Copyright (C) 2002-2012, and GNU GPL'd, by Julian Seward et al.
+==10765== Using Valgrind-3.8.1 and LibVEX; rerun with -h for copyright info
+==10765== Command: ./pull_consumer
+==10765== 
+==10765== 
+==10765== HEAP SUMMARY:
+==10765==     in use at exit: 416 bytes in 2 blocks
+==10765==   total heap usage: 3,555 allocs, 3,553 frees, 234,295 bytes allocated
+==10765== 
+==10765== 96 bytes in 1 blocks are still reachable in loss record 1 of 2
+==10765==    at 0x4A075FC: operator new(unsigned long) (vg_replace_malloc.c:298)
+==10765==    by 0x4E2644A: __static_initialization_and_destruction_0(int, int) (MQClientManager.cpp:22)
+==10765==    by 0x4E267FE: _GLOBAL__sub_I_MQClientManager.cpp (MQClientManager.cpp:66)
+==10765==    by 0x3D90C0E66E: _dl_init (in /lib64/ld-2.12.so)
+==10765==    by 0x3D90C00B39: ??? (in /lib64/ld-2.12.so)
+==10765== 
+==10765== 320 bytes in 1 blocks are possibly lost in loss record 2 of 2
+==10765==    at 0x4A057BB: calloc (vg_replace_malloc.c:593)
+==10765==    by 0x3D90C119A2: _dl_allocate_tls (in /lib64/ld-2.12.so)
+==10765==    by 0x3D9180727C: pthread_create@@GLIBC_2.2.5 (in /lib64/libpthread-2.12.so)
+==10765==    by 0x4DC39B6: kpr::Thread::Start() (Thread.cpp:157)
+==10765==    by 0x4DCA061: kpr::TimerTaskManager::Init(int, int) (TimerTaskManager.cpp:39)
+==10765==    by 0x4E10DB5: MQClientFactory::start() (MQClientFactory.cpp:114)
+==10765==    by 0x4D8C780: DefaultMQPullConsumerImpl::start() (DefaultMQPullConsumerImpl.cpp:336)
+==10765==    by 0x4D88685: DefaultMQPullConsumer::start() (DefaultMQPullConsumer.cpp:195)
+==10765==    by 0x4078DF: main (PullConsumer.cpp:62)
+==10765== 
+==10765== LEAK SUMMARY:
+==10765==    definitely lost: 0 bytes in 0 blocks
+==10765==    indirectly lost: 0 bytes in 0 blocks
+==10765==      possibly lost: 320 bytes in 1 blocks
+==10765==    still reachable: 96 bytes in 1 blocks
+==10765==         suppressed: 0 bytes in 0 blocks
+==10765== 
+==10765== For counts of detected and suppressed errors, rerun with: -v
+==10765== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 6 from 6)
